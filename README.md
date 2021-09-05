@@ -1,2 +1,2 @@
-# Spirograph.jl
+# Spirograph
 Julia implementation of a spirograph
