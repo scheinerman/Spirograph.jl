@@ -51,7 +51,7 @@ To save an image, use the `savefig` function from [Plots](http://docs.juliaplots
 ```julia
 julia> using Spirograph, Plots
 
-julia> spirograph(80,33,45,linewidth=0.5)
+julia> spirograph(80,-33,45,linewidth=0.5)
 
 julia> savefig("my-spiro.pdf")
 ```

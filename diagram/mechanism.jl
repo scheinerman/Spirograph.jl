@@ -1,5 +1,11 @@
 using SimpleDrawing, Plots
 
+"""
+    mechanism(a,b,offset)
+
+Draw a picture of the spirograph mechanism. Draw with `spirograph` first, then follow
+with `mechanism` usint the same parameters.
+"""
 function mechanism(a::Int, b::Int, offset::Real)
     draw_circle(0, 0, a, linecolor = :black)
     draw_point(0, 0, color = :black, marker = 2)
