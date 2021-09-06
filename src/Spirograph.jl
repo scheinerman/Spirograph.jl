@@ -1,7 +1,10 @@
 module Spirograph
 
-using SimpleDrawing, Plots
+using Plots
 
+function lastly()
+    plot!(aspectratio = 1, legend = false, axis = false, grid = false, ticks = false)
+end
 
 @inline inner_angle(a::Int, b::Int, t::Real)::Float64 = b * t / a
 
@@ -13,9 +16,14 @@ end
 @inline stop_t(a::Int, b::Int) = 2 * π * lcm(a, b)
 
 function spiro_points(a::Int, b::Int, offset::Real, step::Real)
+    if a==0 || b==0
+        error("Radii of the circles must be nonzero")
+    end
     T = stop_t(a, b)
     return [spot(a, b, offset, t) for t = 0:step:T]
 end
+
+_DEFAULT_STEP = 0.05
 
 """
     spirograph(a,b,offset;args...)
@@ -29,11 +37,10 @@ The optional `args` are passed to `plot`.
 ## Example
 `spirograph(20,-9,12,linecolor=:green)`
 """
-function spirograph(a::Int, b::Int, offset::Real, step::Real = 0.01; args...)
+function spirograph(a::Int, b::Int, offset::Real, step::Real = _DEFAULT_STEP; args...)
     pts = spiro_points(a, b, offset, step)
-    newdraw()
     plot(real(pts), imag(pts); args...)
-    finish()
+    lastly()
 end
 
 """
@@ -41,10 +48,10 @@ end
 Same as `spirograph` but does not clear the drawing screen first. This way spirograph
 images can be combined.
 """
-function spirograph!(a::Int, b::Int, offset::Real, step::Real = 0.01; args...)
+function spirograph!(a::Int, b::Int, offset::Real, step::Real = _DEFAULT_STEP; args...)
     pts = spiro_points(a, b, offset, step)
     plot!(real(pts), imag(pts); args...)
-    finish()
+    lastly()
 end
 
 export spirograph, spirograph!
