@@ -55,3 +55,5 @@ julia> spirograph(80,33,45,linewidth=0.5)
 
 julia> savefig("my-spiro.pdf")
 ```
+
+[Click here](my-spiro.pdf) to see the result. 
