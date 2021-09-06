@@ -3,7 +3,7 @@ Julia implementation of the classic [Spirograph](https://en.wikipedia.org/wiki/S
 
 
 
-## Creating Drawings
+## Creating Spirograph Drawings
 
 To make a spirograph drawing, use the function
 ```julia
@@ -14,7 +14,12 @@ where
 + `b` is the radius of the moving wheel, and
 + `offset` is the distance from the center of the moving wheel to the pen location.
 
-Here `a` and `b` are integers. The argument `b` may be negative, in which case the moving wheel glides along the inside of the fixed wheel. See [this diagram](diagram.pdf) in which the red dot shows the pen location.
+Here `a` and `b` are integers. The argument `b` may be negative, in which case the moving wheel glides along the inside of the fixed wheel. This is shown in the following diagram in which the red dot shows the pen location.
+
+![](diagram.png)
+
+
+### Drawing Options
 
 The optional `args` can be used to change aspects of the plot.
 
@@ -26,7 +31,7 @@ produces this image:
 
 ![](spiro-sample.png)
 
-## Combining Drawings
+### Combining Drawings
 
 We also provide the function `spirograph!` that operates exactly like `spirograph` but does not first clear the drawing window. In this way, multiple spirograph images can be combined.
 
