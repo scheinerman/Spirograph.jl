@@ -14,7 +14,7 @@ where
 + `b` is the radius of the moving wheel, and
 + `offset` is the distance from the center of the moving wheel to the pen location.
 
-Here `a` and `b` are integers. The argument `b` may be negative, in which case the moving wheel glides along the inside of the fixed wheel. 
+Here `a` and `b` are integers. The argument `b` may be negative, in which case the moving wheel glides along the inside of the fixed wheel. See [this diagram](diagram.pdf) in which the red dot shows the pen location.
 
 The optional `args` can be used to change aspects of the plot.
 
