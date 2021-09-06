@@ -16,8 +16,10 @@ end
 @inline stop_t(a::Int, b::Int) = 2 * π * lcm(a, b)
 
 function spiro_points(a::Int, b::Int, offset::Real, step::Real)
-    if a == 0 || b == 0
-        error("Radii of the circles must be nonzero")
+    if a <= 0 || b == 0
+        error(
+            "Radius of fixed circle must be positive and radius of the rolling disk must be nonzero",
+        )
     end
     T = stop_t(a, b)
     return [spot(a, b, offset, t) for t = 0:step:T]

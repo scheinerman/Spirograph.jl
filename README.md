@@ -18,6 +18,7 @@ Here `a` and `b` are integers. The argument `b` may be negative, in which case t
 
 ![](diagram.png)
 
+See also [this diagram](diagram2.pdf) that shows the spirograph with `a=14`, `b=-5`, and `offset=4` overlayed with a picture of the two wheels with a red dot for the pen location. (This picture was created using the `mechanism` function defined in the file `diagram/mechanism.jl`.)
 
 ### Drawing Options
 
