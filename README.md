@@ -39,3 +39,14 @@ julia> spirograph!(40,-11,14,linecolor=:green)
 ```
 
 ![](multicolor.png)
+
+## Saving
+
+To save an image, use the `savefig` function from [Plots](http://docs.juliaplots.org/latest/). For example:
+```julia
+julia> using Spirograph, Plots
+
+julia> spirograph(80,33,45,linewidth=0.5)
+
+julia> savefig("my-spiro.pdf")
+```
