@@ -30,9 +30,9 @@ _DEFAULT_STEP = 0.05
 """
     spirograph(a,b,offset;args...)
 Draw a spirograph picture where
-+ `a` is the radius of the fixed wheel
-+ `b` is the radius of the moving wheel
-+ `offset` is the distance from the center of the inner wheel to the pen
++ `a` is the radius of the fixed wheel,
++ `b` is the radius of the moving wheel, and
++ `offset` is the distance from the center of the moving wheel to the pen.
 
 The optional `args` are passed to `plot`. 
 
