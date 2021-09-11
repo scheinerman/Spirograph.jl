@@ -10,10 +10,10 @@ end
 
 @inline function spot(a::Int, b::Int, offset::Real, t::Real)::Complex{Float64}
     θ = inner_angle(a, b, t)
-    return (a + b) * exp(θ * im) + offset * exp(t * im)
+    return im * ((a + b) * exp(θ * im) + offset * exp(t * im))
 end
 
-@inline stop_t(a::Int, b::Int) = 2 * π * lcm(a, b)
+@inline stop_t(a::Int, b::Int) = 2 * π * (lcm(a, b) ÷ abs(b))
 
 function spiro_points(a::Int, b::Int, offset::Real, step::Real)
     if a <= 0 || b == 0
@@ -21,7 +21,7 @@ function spiro_points(a::Int, b::Int, offset::Real, step::Real)
             "Radius of fixed circle must be positive and radius of the rolling disk must be nonzero",
         )
     end
-    T = stop_t(a, b)
+    T = stop_t(a, b) + step
     return [spot(a, b, offset, t) for t = 0:step:T]
 end
 
