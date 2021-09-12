@@ -21,7 +21,7 @@ function spiro_points(a::Int, b::Int, offset::Real, step::Real)
             "Radius of fixed circle must be positive and radius of the rolling disk must be nonzero",
         )
     end
-    T = stop_t(a, b) + step
+    T = stop_t(a, b) #+ step
     return [spot(a, b, offset, t) for t = 0:step:T]
 end
 
