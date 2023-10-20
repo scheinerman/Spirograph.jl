@@ -6,7 +6,7 @@ Julia implementation of the classic [Spirograph](https://en.wikipedia.org/wiki/S
 ## Creating Spirograph Drawings
 
 To make a spirograph drawing, use the function
-```julia
+```
 spirograph(a,b,offset,args...)
 ```
 where
@@ -25,7 +25,7 @@ See also [this diagram](diagram2.pdf) that shows the spirograph with `a=14`, `b=
 The optional `args` can be used to change aspects of the plot.
 
 For example:
-```julia
+```
 spirograph(25,11,18,linecolor=:red)
 ```
 produces this image:
@@ -36,7 +36,7 @@ produces this image:
 
 We also provide the function `spirograph!` that operates exactly like `spirograph` but does not first clear the drawing window. In this way, multiple spirograph images can be combined.
 
-```julia
+```
 julia> spirograph(40,-11,18,linecolor=:red)
 
 julia> spirograph!(40,-11,16,linecolor=:blue)
@@ -49,7 +49,7 @@ julia> spirograph!(40,-11,14,linecolor=:green)
 ## Saving
 
 To save an image, use the `savefig` function from [Plots](http://docs.juliaplots.org/latest/). For example:
-```julia
+```
 julia> using Spirograph, Plots
 
 julia> spirograph(80,-33,45,linewidth=0.5)
